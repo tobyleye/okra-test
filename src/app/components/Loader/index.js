@@ -6,7 +6,7 @@ import "./loader.scss";
 export default function Loader() {
   return (
     <Center>
-      <Spinner color="#222" />
+      <Spinner color="var(--color-gray-001)" />
     </Center>
   );
 }

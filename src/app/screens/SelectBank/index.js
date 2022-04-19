@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BankLogo } from "../../components/BankLogo";
+import BankList from "../../components/BankList";
 import { useAppState } from "../../contexts/AppStateContext";
 import { useBankList } from "../../contexts/BankListContext";
 import SearchIcon from "../../icons/search";
@@ -18,7 +18,6 @@ export default function SelectBank() {
     return bank.name.toLowerCase().includes(searchQuery);
   });
 
-
   return (
     <div className="select-bank">
       <p className="heading">What bank do you use?</p>
@@ -34,23 +33,10 @@ export default function SelectBank() {
         />
       </div>
 
-      <ul className="bank-list">
-        {filteredList.map((bank, index) => {
-          return (
-            <li
-              key={index}
-              className="bank-list-item"
-              onClick={() => {
-                dispatch({ type: "selectBank", payload: bank });
-              }}
-            >
-              <BankLogo bank={bank} size="32" />
-
-              <div className="bank-name">{bank.name}</div>
-            </li>
-          );
-        })}
-      </ul>
+      <BankList
+        list={filteredList}
+        onSelect={(bank) => dispatch({ type: "selectBank", payload: bank })}
+      />
     </div>
   );
 }

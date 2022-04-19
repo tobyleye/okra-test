@@ -1,17 +1,17 @@
 .container {
-    max-width: 400px;
-    margin: 20px auto;
-    background: white;
-    height: max(90vh, 740px);
-    padding: 0 16px 10px;
-    position: relative;
-    display: flex;
+  margin: 20px auto;
+  background: white;
+  max-width: var(--container-width);
+  height: var(--container-height);
+  padding: 0 var(--container-horizontal-padding);
+  padding-bottom: 10px;
+  position: relative;
+  display: flex;
 
-    
-    .inner {
-        height: 100%;
-        position: relative;
-        width: 100%;
-        overflow: auto;
-    }
+  .inner {
+    height: 100%;
+    position: relative;
+    width: 100%;
+    overflow: auto;
+  }
 }
