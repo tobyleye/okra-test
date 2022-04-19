@@ -33,7 +33,7 @@ export default function Screens() {
         return (
           <>
             <Navigation />
-            <Suspense fallback={<div />}>{renderScreen()}</Suspense>
+            {renderScreen()}
           </>
         );
       }}
