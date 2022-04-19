@@ -6,13 +6,14 @@
 
 :root {
   --container-horizontal-padding: 16px;
-  --container-height: max(90vh, 740px);
+  --container-height: min(90vh, 740px);
   --container-width: 400px;
   --color-gray-001: #222;
 }
 
 body {
   font-size: 16px;
+  padding: 16px;
   font-family: "Inter", sans-serif;
   font-weight: 400;
   background: #f2f3f3;
