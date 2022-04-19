@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy } from "react";
 import { useAppState } from "../contexts/AppStateContext";
 import Navigation from "../components/Navigation";
 import { BankListContextProvider } from "../contexts/BankListContext";

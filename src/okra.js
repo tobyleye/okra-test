@@ -2,7 +2,7 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import App from "./app";
 
-export class Okra {
+export class create {
   constructor() {
     this.root = this.createRoot();
   }
@@ -31,5 +31,5 @@ export class Okra {
 }
 
 export default {
-  create: Okra,
+  create,
 };
