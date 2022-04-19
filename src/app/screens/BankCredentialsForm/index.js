@@ -6,25 +6,25 @@ import { useAppState } from "../../contexts/AppStateContext";
 import userdata from "./userdata";
 import { login_credentials } from "../../utils/constants";
 import { isDev } from "../../utils/isDev";
+import { asyncWait } from "../../utils/asyncWait";
 import "./styles.scss";
 
-console.log({
-    isDev: isDev()
-})
-
 export default function BankCredentialsForm() {
-  const [identity, setIdentity] = useState(isDev() ? login_credentials.username: '');
-  const [password, setPassword] = useState(isDev() ? login_credentials.password : '');
+  const [identity, setIdentity] = useState(
+    isDev() ? login_credentials.username : ""
+  );
+  const [password, setPassword] = useState(
+    isDev() ? login_credentials.password : ""
+  );
   const [isLoading, setIsLoading] = useState(false);
   const [loginError, setLoginError] = useState(false);
-
   const { dispatch } = useAppState();
 
   const submitCredentials = (e) => {
     e.preventDefault();
-    setLoginError(false)
+    setLoginError(false);
     setIsLoading(true);
-    setTimeout(() => {
+    asyncWait(3000).then(() => {
       setIsLoading(false);
       if (
         login_credentials.username === identity &&
@@ -39,7 +39,7 @@ export default function BankCredentialsForm() {
       } else {
         setLoginError(true);
       }
-    }, 3000);
+    });
   };
 
   return (
@@ -58,7 +58,7 @@ export default function BankCredentialsForm() {
             autoFocus
             value={identity}
             onChange={setIdentity}
-            error={loginError && 'Account not found'}
+            error={loginError && "Account not found"}
           />
           <TextField
             label="Password / PIN"

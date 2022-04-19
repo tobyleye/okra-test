@@ -4,6 +4,7 @@ import BottomBlock from "../../components/BottomBlock";
 import Button from "../../components/Button";
 import Success from "../../components/Success";
 import { useAppState } from "../../contexts/AppStateContext";
+import { asyncWait } from "../../utils/asyncWait";
 import "./styles.scss";
 
 export default function SelectBankAccount() {
@@ -20,10 +21,10 @@ export default function SelectBankAccount() {
 
   const processPayment = () => {
     setisLoading(true);
-    setTimeout(() => {
+    asyncWait(3000).then(() => {
       setisLoading(false);
       setShowSuccess(true);
-    }, 3000);
+    });
   };
 
   return (
@@ -44,7 +45,9 @@ export default function SelectBankAccount() {
           onClick={processPayment}
         />
       </BottomBlock>
-      {showSuccess ? <Success selectedAccount={selectedAcct} onReset={reset} /> : null}
+      {showSuccess ? (
+        <Success selectedAccount={selectedAcct} onReset={reset} />
+      ) : null}
     </div>
   );
 }

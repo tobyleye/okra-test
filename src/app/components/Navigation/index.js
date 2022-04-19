@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import cx from "clsx";
-import CloseIcon from "../../svgs/close.svg";
-import ArrowLeftIcon from "../../svgs/arrow-left.svg";
-import OkraLogo from "../../svgs/okra-logo.svg";
-import UnionIcon from "../../svgs/union.svg";
+import CloseIcon from "../../icons/close";
+import ArrowLeftIcon from "../../icons/arrow-left";
+import OkraLogo from "../../icons/okra-logo";
+import UnionIcon from "../../icons/union";
 import { useAppState } from "../../contexts/AppStateContext";
-import { getInitials } from "../../utils/getInitials";
+import { BankLogo } from "../BankLogo";
 import "./navigation.scss";
 
 export default function Navigation() {
@@ -40,18 +40,13 @@ export default function Navigation() {
           <div className={cx("bank-logo-slider", { slide: isBankSelected })}>
             <div className="no-logo">?</div>
             <div className="bank-logo">
-              {isBankSelected && (
-                <img
-                  src={state.selectedBank.icon}
-                  alt={getInitials(state.selectedBank.name)}
-                />
-              )}
+              {isBankSelected && <BankLogo size="30" bank={state.selectedBank} />}
             </div>
           </div>
         </div>
       </div>
 
-      {state.step> 0 ? (
+      {state.step > 0 ? (
         <button className="nav__close" onClick={handleCloseBtnPress}>
           <CloseIcon />
         </button>

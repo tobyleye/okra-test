@@ -1,12 +1,11 @@
 import React from "react";
-import CloseIcon from "../../svgs/close.svg";
+import CloseIcon from "../../icons/close";
 import BottomBlock from "../BottomBlock";
 import Button from "../Button";
-import CheckIcon from "../../svgs/check.svg"
+import CheckIcon from "../../icons/check"
 import "./success.scss";
 
 export default function Success({ selectedAccount, onReset }) {
-    console.log({selectedAccount})
   return (
     <div className="success">
       <div className="success__close">

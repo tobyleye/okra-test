@@ -4,7 +4,6 @@ import cx from "clsx";
 import "./button.scss";
 
 export default function Button({ label, isLoading, onClick, disabled }) {
-    console.log({ disabled })
   return (
     <button
       onClick={onClick}

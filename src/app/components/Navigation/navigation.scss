@@ -2,12 +2,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px 0;
+  padding: 16px 0;
   position: sticky;
   top: 0;
   background-color: #ffffff;
   z-index: 5;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 
   &__mid {
     display: flex;
@@ -38,15 +38,6 @@
         background: gray;
         display: grid;
         place-items: center;
-      }
-
-      .bank-logo {
-        img {
-          width: 30px;
-          height: 30px;
-          object-fit: cover;
-          object-position: center;
-        }
       }
     }
   }

@@ -39,17 +39,7 @@
     cursor: pointer;
   }
 
-  .bank-logo {
-    height: 32px;
-    width: 32px;
-    margin-right: 16px;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      border-radius: 99px;
-    }
+  .bank-name {
+    margin-left: 16px;
   }
 }

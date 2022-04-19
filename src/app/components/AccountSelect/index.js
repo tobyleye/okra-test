@@ -2,8 +2,8 @@ import React from "react";
 import { formatBalance } from "../../utils/formatBalance";
 import cx from "clsx";
 import "./accountSelect.scss";
-import CheckCircleIcon from "../../svgs/check-circle.svg";
-import RadioIcon from "../../svgs/radio.svg";
+import CheckCircleIcon from "../../icons/check-circle.js";
+import RadioIcon from "../../icons/radio.js";
 
 export default function AccountSelect({ accounts, value, onChange }) {
   let handleChange = (e) => {

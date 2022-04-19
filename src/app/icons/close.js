@@ -1,5 +1,5 @@
 import React from 'react'
-export default function ArrowLeftIcon() {
+export default function Close() {
   return (
     <svg
       width="25"
@@ -9,15 +9,15 @@ export default function ArrowLeftIcon() {
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M19.5 12H5.5"
-        stroke="black"
+        d="M18.5 6L6.5 18"
+        stroke="#5A5C5C"
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
       <path
-        d="M12.5 19L5.5 12L12.5 5"
-        stroke="black"
+        d="M6.5 6L18.5 18"
+        stroke="#5A5C5C"
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"

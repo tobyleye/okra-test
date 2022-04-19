@@ -1,8 +1,8 @@
 import React, { useState } from "react";
+import { BankLogo } from "../../components/BankLogo";
 import { useAppState } from "../../contexts/AppStateContext";
 import { useBankList } from "../../contexts/BankListContext";
-import SearchIcon from "../../svgs/Search.svg";
-
+import SearchIcon from "../../icons/search";
 import "./styles.scss";
 
 export default function SelectBank() {
@@ -17,6 +17,7 @@ export default function SelectBank() {
     }
     return bank.name.toLowerCase().includes(searchQuery);
   });
+
 
   return (
     <div className="select-bank">
@@ -43,9 +44,8 @@ export default function SelectBank() {
                 dispatch({ type: "selectBank", payload: bank });
               }}
             >
-              <div className="bank-logo">
-                <img src={bank.icon} />
-              </div>
+              <BankLogo bank={bank} size="32" />
+
               <div className="bank-name">{bank.name}</div>
             </li>
           );
