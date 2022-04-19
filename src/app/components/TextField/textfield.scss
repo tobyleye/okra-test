@@ -2,7 +2,6 @@
   position: relative;
   border: 1px solid rgba(60, 66, 87, 0.24);
   border-radius: 6px;
-  margin: 6px 0;
 
   input {
     border: none;
@@ -28,10 +27,34 @@
     line-height: 24px;
     letter-spacing: -0.01px;
   }
-}
 
-.text-field--focused label,
-.text-field--has-value label {
-  top: 0;
-  font-size: 12px;
+  &__error-msg {
+    font-size: 12px;
+    margin-top: 2px;
+  }
+
+  &--focused label,
+  &--has-value label {
+    top: 0;
+    font-size: 12px;
+  }
+
+  &__wrapper {
+    margin: 6px 0;
+
+    &--error {
+
+      .text-field {
+        border-color: red;
+
+        label{
+            color: red;
+        }
+      }
+
+      .text-field__error-msg {
+        color: red;
+      }
+    }
+  }
 }

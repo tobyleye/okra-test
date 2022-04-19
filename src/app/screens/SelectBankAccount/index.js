@@ -13,10 +13,9 @@ export default function SelectBankAccount() {
   const [showSuccess, setShowSuccess] = useState(false);
 
   const reset = () => {
-    setShowSuccess(false);
-    // dispatch({
-    //   type: "reset",
-    // });
+    dispatch({
+      type: "reset",
+    });
   };
 
   const processPayment = () => {
@@ -24,7 +23,7 @@ export default function SelectBankAccount() {
     setTimeout(() => {
       setisLoading(false);
       setShowSuccess(true);
-    }, 5000);
+    }, 3000);
   };
 
   return (

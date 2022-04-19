@@ -1,5 +1,5 @@
 import React from "react";
-import { formatBalance } from "../../utils/formatAmount";
+import { formatBalance } from "../../utils/formatBalance";
 import cx from "clsx";
 import "./accountSelect.scss";
 import CheckCircleIcon from "../../svgs/check-circle.svg";

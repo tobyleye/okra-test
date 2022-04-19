@@ -4,27 +4,41 @@ import Button from "../../components/Button";
 import TextField from "../../components/TextField";
 import { useAppState } from "../../contexts/AppStateContext";
 import userdata from "./userdata";
+import { login_credentials } from "../../utils/constants";
+import { isDev } from "../../utils/isDev";
 import "./styles.scss";
 
+console.log({
+    isDev: isDev()
+})
+
 export default function BankCredentialsForm() {
-  const [identity, setIdentity] = useState("xxx");
-  const [password, setPassword] = useState("xxx");
+  const [identity, setIdentity] = useState(isDev() ? login_credentials.username: '');
+  const [password, setPassword] = useState(isDev() ? login_credentials.password : '');
   const [isLoading, setIsLoading] = useState(false);
+  const [loginError, setLoginError] = useState(false);
 
   const { dispatch } = useAppState();
 
   const submitCredentials = (e) => {
     e.preventDefault();
-
+    setLoginError(false)
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
-      dispatch({
-        type: "authenticate",
-        payload: {
-          userdata,
-        },
-      });
+      if (
+        login_credentials.username === identity &&
+        login_credentials.password === password
+      ) {
+        dispatch({
+          type: "authenticate",
+          payload: {
+            userdata,
+          },
+        });
+      } else {
+        setLoginError(true);
+      }
     }, 3000);
   };
 
@@ -44,6 +58,7 @@ export default function BankCredentialsForm() {
             autoFocus
             value={identity}
             onChange={setIdentity}
+            error={loginError && 'Account not found'}
           />
           <TextField
             label="Password / PIN"

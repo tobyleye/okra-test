@@ -6,7 +6,7 @@ import CheckIcon from "../../svgs/check.svg"
 import "./success.scss";
 
 export default function Success({ selectedAccount, onReset }) {
-
+    console.log({selectedAccount})
   return (
     <div className="success">
       <div className="success__close">
@@ -18,7 +18,7 @@ export default function Success({ selectedAccount, onReset }) {
           <CheckIcon />
       </div>
       <p className="success__message">
-        Your account ending in {selectedAccount.slice(-4, 0)} has been successfully linked and debited.
+        Your account ending in {selectedAccount.slice(-4)} has been successfully linked and debited.
       </p>
       <BottomBlock>
         <Button label="Return to CrossWallet" onClick={onReset} />
