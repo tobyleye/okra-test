@@ -1,0 +1,42 @@
+.spinner {
+  width: var(--size);
+  height: var(--size);
+  display: inline-block;
+  position: relative;
+
+  div {
+    transform-origin: center;
+    position: absolute;
+    width: var(--size);
+    height: var(--size);
+    animation: spinner 0.8s ease infinite;
+
+    &::after {
+      content: " ";
+      display: block;
+      position: absolute;
+      left: 50%;
+      height: 6px;
+      width: 2px;
+      background: var(--color);
+      transform: translateX(-50%);
+    }
+  }
+
+
+  @for $i from 0 through 11 {
+    div:nth-child(#{$i + 1}) {
+      transform: rotate(#{$i * 30deg});
+      animation-delay: #{($i - 11) * 0.8s/12};
+    }
+  }
+}
+
+@keyframes spinner {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }

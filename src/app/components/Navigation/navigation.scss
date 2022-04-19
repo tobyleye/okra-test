@@ -1,0 +1,71 @@
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  background-color: #ffffff;
+  z-index: 5;
+  margin-bottom: 20px;
+
+  &__mid {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    .bank-logo-container {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      flex-direction: column;
+      border-radius: 99px;
+      overflow: hidden;
+
+      .bank-logo-slider {
+        transform: translateY(0);
+        transition: 0.25s ease;
+
+        &.slide {
+          transform: translateY(-50%);
+        }
+      }
+      .no-logo {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+        color: white;
+        background: gray;
+        display: grid;
+        place-items: center;
+      }
+
+      .bank-logo {
+        img {
+          width: 30px;
+          height: 30px;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+    }
+  }
+
+  &__back {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    display: grid;
+    place-items: center;
+  }
+
+  &__close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: grid;
+    place-items: center;
+  }
+}

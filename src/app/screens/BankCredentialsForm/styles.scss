@@ -1,0 +1,23 @@
+.bank-credentials-form{
+    .sub-heading {
+        font-size: 12px;
+        line-height: 18px;
+        letter-spacing: 0.1px;
+        margin-bottom: 20px;
+    }
+
+    .form-fields {
+        display: grid;
+        grid-gap: 5px;
+        margin-bottom: 3px;
+    }
+
+    .muted-text {
+        font-size: 14px;
+        line-height: 24px;
+        font-weight: 100;
+        color:#222;
+    }
+
+   
+}

@@ -1,0 +1,50 @@
+.success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 20;
+    background-color: #FFFFFF;
+    animation: showSuccess .15s ease-in;
+
+    &__close {
+        display: flex;
+        justify-content: flex-end;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right:0;
+        padding-top: 40px;
+    }
+    &__icon{
+        background: #031927;
+        width: 50px;
+        height: 50px;
+        border-radius: 99px;
+        margin-bottom: 20px;
+        display: grid;
+        place-items: center;
+    }
+
+    &__message {
+        line-height: 26px;
+        font-weight: 500;
+        text-align: center;
+    }
+}
+
+@keyframes showSuccess {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

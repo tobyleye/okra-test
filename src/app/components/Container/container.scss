@@ -1,0 +1,17 @@
+.container {
+    max-width: 400px;
+    margin: 20px auto;
+    background: white;
+    height: calc(100vh - 10vh);
+    padding: 0 16px 10px;
+    position: relative;
+    display: flex;
+
+    
+    .inner {
+        height: 100%;
+        position: relative;
+        width: 100%;
+        overflow: auto;
+    }
+}
